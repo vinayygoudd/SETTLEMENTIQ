@@ -1,0 +1,26 @@
+merchant_id,merchant_name,merchant_category,onboarding_date,merchant_status,settlement_frequency,contractual_fee_rate,contractual_fixed_fee,currency,region,operational_classification,default_payment_gateway,settlement_sla_days,is_synthetic
+MERCH_1001,Aarav Digital Retail Pvt Ltd,E-Commerce & Retail,2024-01-10,ACTIVE,T+1,0.0180,2.00,INR,West,Tier1_Standard,AxisPay_Gateway,1,TRUE
+MERCH_1002,BharatMart Hypermarkets,Grocery & Essentials,2024-01-22,ACTIVE,T+1,0.0140,1.50,INR,North,Tier1_Standard,HDFC_SmartHub,1,TRUE
+MERCH_1003,CloudPulse SaaS India,Software & B2B SaaS,2024-02-05,ACTIVE,T+2,0.0220,3.00,INR,South,Tier1_Standard,ICICI_PaySeal,2,TRUE
+MERCH_1004,Deccan Express Logistics,Logistics & Supply Chain,2024-02-18,ACTIVE,T+2,0.0175,2.00,INR,South,Tier2_Monitored,RazorFlow_India,2,TRUE
+MERCH_1005,ElectroPrime Appliances,Consumer Electronics,2024-03-01,ACTIVE,T+2,0.0200,2.50,INR,West,Tier2_Monitored,AxisPay_Gateway,2,TRUE
+MERCH_1006,FabVogue Fashion Co,Apparel & Lifestyle,2024-03-14,ACTIVE,T+2,0.0190,2.00,INR,North,Tier1_Standard,HDFC_SmartHub,2,TRUE
+MERCH_1007,GreenVeda Wellness Ltd,Healthcare & Pharmacy,2024-04-02,ACTIVE,T+1,0.0150,1.50,INR,East,Tier1_Standard,ICICI_PaySeal,1,TRUE
+MERCH_1008,Horizon Sky Travel & Stays,Travel & Hospitality,2024-04-19,ACTIVE,T+2,0.0240,3.50,INR,West,Tier3_HighExposure,RazorFlow_India,2,TRUE
+MERCH_1009,Indus MedCare Diagnostics,Healthcare & Pharmacy,2024-05-06,ACTIVE,T+1,0.0135,1.00,INR,South,Tier1_Standard,AxisPay_Gateway,1,TRUE
+MERCH_1010,Jaipur Heritage Artisans,Home & Specialty Retail,2024-05-20,ACTIVE,T+2,0.0210,2.00,INR,North,Tier2_Monitored,HDFC_SmartHub,2,TRUE
+MERCH_1011,Kaveri EdTech Academy,Education & Upskilling,2024-06-03,ACTIVE,T+2,0.0185,2.00,INR,South,Tier1_Standard,ICICI_PaySeal,2,TRUE
+MERCH_1012,Lotus Gourmet Hospitality,Food & Dining,2024-06-17,ACTIVE,T+1,0.0160,1.50,INR,West,Tier1_Standard,RazorFlow_India,1,TRUE
+MERCH_1013,MetroAuto Spares & Service,Automotive & Parts,2024-07-01,ACTIVE,T+2,0.0195,2.50,INR,Central,Tier2_Monitored,AxisPay_Gateway,2,TRUE
+MERCH_1014,Namma QuickBasket Delivery,Hyperlocal Quick-Commerce,2024-07-15,ACTIVE,T+1,0.0155,1.00,INR,South,Tier1_Standard,HDFC_SmartHub,1,TRUE
+MERCH_1015,Orbit Interactive Gaming,Digital Goods & Gaming,2024-08-01,ACTIVE,T+2,0.0250,3.00,INR,West,Tier3_HighExposure,ICICI_PaySeal,2,TRUE
+MERCH_1016,Pragati AgriTech Inputs,Agriculture & B2B,2024-08-14,ACTIVE,T+2,0.0145,1.50,INR,Central,Tier1_Standard,RazorFlow_India,2,TRUE
+MERCH_1017,Quantum FinServ Advisory,Financial Services,2024-09-01,ACTIVE,T+2,0.0205,2.50,INR,West,Tier2_Monitored,AxisPay_Gateway,2,TRUE
+MERCH_1018,Raga Music & Ticketing,Events & Entertainment,2024-09-12,ACTIVE,T+2,0.0230,3.00,INR,South,Tier3_HighExposure,HDFC_SmartHub,2,TRUE
+MERCH_1019,Surya Solar Home Systems,Utilities & Clean Energy,2024-09-25,ACTIVE,T+2,0.0170,2.00,INR,North,Tier1_Standard,ICICI_PaySeal,2,TRUE
+MERCH_1020,Triveni Book & Media House,Publishing & Books,2024-10-08,ACTIVE,T+1,0.0165,1.50,INR,East,Tier1_Standard,RazorFlow_India,1,TRUE
+MERCH_1021,Udaan Fitness & Sports,Sports & Fitness,2024-10-22,ACTIVE,T+2,0.0185,2.00,INR,North,Tier1_Standard,AxisPay_Gateway,2,TRUE
+MERCH_1022,Vanguard Cloud Hosting,IT Infrastructure,2024-11-05,ACTIVE,T+2,0.0215,2.50,INR,South,Tier2_Monitored,HDFC_SmartHub,2,TRUE
+MERCH_1023,Western Ghats Specialty Coffee,Food & Beverage,2024-11-19,ACTIVE,T+1,0.0160,1.50,INR,South,Tier1_Standard,ICICI_PaySeal,1,TRUE
+MERCH_1024,Zenith Home Furnishings,Home & Furniture,2024-12-02,ACTIVE,T+2,0.0225,3.00,INR,West,Tier2_Monitored,RazorFlow_India,2,TRUE
+MERCH_1025,Apex OmniChannel Retail,Department Stores,2024-12-18,ACTIVE,T+1,0.0150,1.50,INR,East,Tier1_Standard,AxisPay_Gateway,1,TRUE

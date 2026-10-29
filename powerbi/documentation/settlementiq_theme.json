@@ -1,0 +1,16 @@
+{
+  "name": "SettlementIQ_Financial_Operations_Theme",
+  "dataColors": [
+    "#0F172A",
+    "#1D4ED8",
+    "#0D9488",
+    "#D97706",
+    "#DC2626",
+    "#334155",
+    "#64748B",
+    "#94A3B8"
+  ],
+  "background": "#F8FAFC",
+  "foreground": "#0F172A",
+  "tableAccent": "#1D4ED8"
+}

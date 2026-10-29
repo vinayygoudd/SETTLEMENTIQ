@@ -1,0 +1,33 @@
+==============================================================================
+SettlementIQ — Automated Test Suite Execution (27 Test Assertions)
+==============================================================================
+PASSED  python/tests/test_data_quality.py::test_10_before_after_row_accounting_exact (0.001s)
+PASSED  python/tests/test_data_quality.py::test_11_monetary_conservation_zero_unexplained_diff (0.000s)
+PASSED  python/tests/test_database.py::test_12_database_tables_and_row_counts (0.001s)
+PASSED  python/tests/test_database.py::test_13_exception_history_and_lifecycle_states (0.001s)
+PASSED  python/tests/test_database.py::test_14_foreign_key_and_check_constraints_enforced (0.000s)
+PASSED  python/tests/test_database.py::test_15_business_day_calculation_function (0.000s)
+PASSED  python/tests/test_financial_controls.py::test_22_exact_decimal_rounding_half_up (0.000s)
+PASSED  python/tests/test_financial_controls.py::test_23_signed_and_absolute_variance_invariants (0.058s)
+PASSED  python/tests/test_financial_controls.py::test_24_unresolved_exposure_excludes_resolved_exceptions (0.003s)
+PASSED  python/tests/test_ground_truth.py::test_26_ground_truth_classification_exceeds_95_pct_target (0.000s)
+PASSED  python/tests/test_ground_truth.py::test_27_zero_clean_record_false_positives (0.000s)
+PASSED  python/tests/test_kpis.py::test_25_kpi_catalog_completeness_and_values (0.000s)
+PASSED  python/tests/test_reconciliation.py::test_16_rule_r1_exact_and_r2_tolerance_matches (0.000s)
+PASSED  python/tests/test_reconciliation.py::test_17_rule_r3_fee_adjusted_and_r5_partial_matches (0.000s)
+PASSED  python/tests/test_reconciliation.py::test_18_rule_r4_late_settlement_and_bank_timing_exceptions (0.000s)
+PASSED  python/tests/test_reconciliation.py::test_19_rule_r6_duplicates_and_legitimate_repeats (0.003s)
+PASSED  python/tests/test_reconciliation.py::test_20_rule_r7_missing_counterparts_and_r8_ambiguous (0.000s)
+PASSED  python/tests/test_reconciliation.py::test_21_rule_r9_refund_reconciliation_outcomes (0.000s)
+PASSED  python/tests/test_synthetic_data.py::test_01_synthetic_data_volumes_and_entities (0.000s)
+PASSED  python/tests/test_synthetic_data.py::test_02_deterministic_reproducibility_same_seed (1.079s)
+PASSED  python/tests/test_synthetic_data.py::test_03_all_28_planted_scenarios_present (0.002s)
+PASSED  python/tests/test_validation.py::test_04_required_schema_validation_passes (0.025s)
+PASSED  python/tests/test_validation.py::test_05_missing_file_raises_explicit_error (0.001s)
+PASSED  python/tests/test_validation.py::test_06_missing_columns_raises_explicit_error (0.002s)
+PASSED  python/tests/test_validation.py::test_07_quarantine_captures_missing_and_invalid_values (0.000s)
+PASSED  python/tests/test_validation.py::test_08_cross_currency_protection_quarantines_usd_and_eur (0.004s)
+PASSED  python/tests/test_validation.py::test_09_duplicate_ingestion_suppressed_idempotently (0.000s)
+------------------------------------------------------------------------------
+Summary: 27/27 tests passed, 0 failed in 6.02s
+==============================================================================

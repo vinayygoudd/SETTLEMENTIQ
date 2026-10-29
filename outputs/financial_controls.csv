@@ -1,0 +1,7 @@
+control_point_id,control_stage,currency,expected_control_total,observed_reconstructed_total,unexplained_difference,control_status,explanation
+FC_01,Raw vs Validated INR Ledger Gross Conservation,INR,92603168.27,92603168.27,0.00,PASS_ZERO_UNEXPLAINED_DIFF,Raw INR Gross = Validated INR Gross + Quarantined INR Gross + Suppressed Replay INR Gross
+FC_02,Cross-Currency Isolation Control (USD Quarantined),USD,56925.52,56925.52,0.00,PASS_ISOLATED,4 USD transactions quarantined prior to INR reconciliation; zero cross-currency summation
+FC_03,Cross-Currency Isolation Control (EUR Quarantined),EUR,56234.36,56234.36,0.00,PASS_ISOLATED,4 EUR transactions quarantined prior to INR reconciliation; zero cross-currency summation
+FC_04,Raw vs Validated Settlement Net Conservation,INR,89957943.34,89957943.34,0.00,PASS_ZERO_UNEXPLAINED_DIFF,Raw Settlement Net = Validated Settlement Net + 25 Suppressed Replay Settlement Lines
+FC_05,Reconciliation Signed Variance Identity (Observed - Expected),INR,-734467.72,-734467.72,0.00,PASS_EXACT_DECIMAL_IDENTITY,"SUM(Observed) - SUM(Expected) exactly equals SUM(Signed Variance) across all 10,000 cases"
+FC_06,Unresolved Exposure vs Confirmed Financial Loss Separation,INR,3752510.63,3752510.63,0.00,PASS_SEPARATED,Outstanding unresolved exposure (3752510.63 INR) reported separately from confirmed loss (126151.24 INR)

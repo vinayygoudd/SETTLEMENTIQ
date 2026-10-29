@@ -1,0 +1,55 @@
+kpi_id,category,kpi_name,actual_value,unit,formula,numerator,denominator,population,source,currency
+KPI_VOL_01,Volume,Total Raw Transaction Count,9955,Records,COUNT(*) FROM raw_staging.stg_transactions,9955,N/A,All raw ingested transaction rows,stg_transactions,ALL
+KPI_VOL_02,Volume,Validated Distinct Transaction Count,9885,Transactions,COUNT(DISTINCT transaction_id) FROM validated.transactions,9885,N/A,Validated INR ledger transactions,validated.transactions,INR
+KPI_VOL_03,Volume,Distinct Customer Count,3200,Customers,COUNT(DISTINCT customer_id) FROM validated.transactions,3200,N/A,Validated ledger transactions,validated.transactions,INR
+KPI_VOL_04,Volume,Distinct Merchant Count,25,Merchants,COUNT(DISTINCT merchant_id) FROM validated.merchants,25,N/A,Active onboarded merchants,validated.merchants,INR
+KPI_VOL_05,Volume,Validated Settlement Record Count,10065,Records,COUNT(*) FROM validated.settlements,10065,N/A,Deduplicated settlement lines,validated.settlements,INR
+KPI_VOL_06,Volume,Validated Bank-Entry Count,10070,Records,COUNT(*) FROM validated.bank_entries,10070,N/A,Validated bank statement rows,validated.bank_entries,INR
+KPI_VOL_07,Volume,Validated Refund Count,250,Records,COUNT(*) FROM validated.refunds,250,N/A,Validated refund records,validated.refunds,INR
+KPI_VOL_08,Volume,Reconciliation Evaluated Record Count,10000,Cases,COUNT(*) FROM reconciliation.reconciliation_matches,10000,N/A,"All 10,000 evaluated cases (txns + orphans + quarantined)",reconciliation_matches,INR
+KPI_VOL_09,Volume,Total Distinct Exception Count,800,Exceptions,COUNT(DISTINCT exception_id) FROM reconciliation.exceptions,800,N/A,All detected reconciliation & DQ exceptions,reconciliation.exceptions,INR
+KPI_VOL_10,Volume,Quarantined Source Record Count,45,Records,COUNT(*) FROM raw_staging.quarantine_records,45,N/A,Records failing schema/currency/amount validation,quarantine_records,ALL
+KPI_VOL_11,Volume,Suppressed Duplicate Ingestion Count,50,Records,Raw rows minus deduplicated staging rows,50,N/A,Replay rows suppressed at ingestion (25 txn + 25 stl),staging_dedup,INR
+KPI_FIN_01,Financial,Total Validated Gross Transaction Value,92279608.45,INR,SUM(transaction_amount) FROM validated.transactions,92279608.45,N/A,"9,885 validated INR ledger transactions",validated.transactions,INR
+KPI_FIN_02,Financial,Total Validated Gross Settlement Value,92217404.68,INR,SUM(gross_amount) FROM validated.settlements,92217404.68,N/A,"10,065 validated settlement lines",validated.settlements,INR
+KPI_FIN_03,Financial,Total Settlement Fee & Adjustment Value,2320513.65,INR,SUM(fee_amount) FROM validated.settlements,2320513.65,N/A,"10,065 validated settlement lines",validated.settlements,INR
+KPI_FIN_04,Financial,Total Validated Net Settlement Value,89896891.06,INR,SUM(net_settlement_amount) FROM validated.settlements,89896891.06,N/A,"10,065 validated settlement lines",validated.settlements,INR
+KPI_FIN_05,Financial,Total Bank Credit Value,90147315.46,INR,SUM(credit_amount) FROM validated.bank_entries,90147315.46,N/A,"10,070 validated bank entries",validated.bank_entries,INR
+KPI_FIN_06,Financial,Total Bank Debit Value,0.00,INR,SUM(debit_amount) FROM validated.bank_entries,0.00,N/A,"10,070 validated bank entries",validated.bank_entries,INR
+KPI_FIN_07,Financial,Total Requested Refund Value,473860.24,INR,SUM(refund_amount) FROM validated.refunds,473860.24,N/A,250 validated refund records,validated.refunds,INR
+KPI_FIN_08,Financial,Total Expected Net Financial Value,90541356.02,INR,SUM(expected_amount) FROM reconciliation_matches,90541356.02,N/A,"All 10,000 reconciliation cases",reconciliation_matches,INR
+KPI_FIN_09,Financial,Total Observed Net Financial Value,89806888.30,INR,SUM(observed_amount) FROM reconciliation_matches,89806888.30,N/A,"All 10,000 reconciliation cases",reconciliation_matches,INR
+KPI_FIN_10,Financial,Net Signed Discrepancy,-734467.72,INR,SUM(observed_amount - expected_amount),-734467.72,N/A,"All 10,000 reconciliation cases",reconciliation_matches,INR
+KPI_FIN_11,Financial,Total Absolute Discrepancy (All Cases),4203811.18,INR,SUM(ABS(observed_amount - expected_amount)),4203811.18,N/A,"All 10,000 reconciliation cases",reconciliation_matches,INR
+KPI_FIN_12,Financial,Outstanding Discrepancy Exposure,3752510.63,INR,"SUM(ABS(signed_variance)) WHERE resolution_status IN ('OPEN', 'REOPENED')",3752510.63,N/A,Unresolved (OPEN + REOPENED) exceptions only,reconciliation.exceptions,INR
+KPI_FIN_13,Financial,Confirmed Financial Loss,126151.24,INR,SUM(confirmed_loss) FROM reconciliation.exceptions,126151.24,N/A,Independently evidenced write-off cases (15 cases),reconciliation.exceptions,INR
+KPI_REC_01,Reconciliation,Overall Ledger Reconciliation Rate,93.07,%,(Matched Validated Ledger Txns / Total Validated Ledger Txns) * 100,9200,9885,"9,885 validated INR ledger transactions",reconciliation_matches,INR
+KPI_REC_02,Reconciliation,Total Ecosystem Match Rate (10K Cases),92.00,%,"(Matched Cases / All 10,000 Evaluated Cases) * 100",9200,10000,"All 10,000 evaluated ecosystem cases",reconciliation_matches,INR
+KPI_REC_03,Reconciliation,Exact Match Rate (R1),85.38,%,(MATCHED_EXACT Count / Validated Ledger Txns) * 100,8440,9885,Validated INR ledger transactions,reconciliation_matches,INR
+KPI_REC_04,Reconciliation,Tolerance Match Rate (R2),3.64,%,(MATCHED_WITH_VARIANCE Count / Validated Ledger Txns) * 100,360,9885,Validated INR ledger transactions,reconciliation_matches,INR
+KPI_REC_05,Reconciliation,Fee-Adjusted Match Rate (R3),2.53,%,(MATCHED_FEE_ADJUSTED Count / Validated Ledger Txns) * 100,250,9885,Validated INR ledger transactions,reconciliation_matches,INR
+KPI_REC_06,Reconciliation,Multi-Part Complete Settlement Rate (R5),1.52,%,(MATCHED_PARTIAL Count / Validated Ledger Txns) * 100,150,9885,Validated INR ledger transactions,reconciliation_matches,INR
+KPI_REC_07,Reconciliation,Partial Settlement Shortfall Rate (R5),0.61,%,(PARTIALLY_SETTLED Count / Validated Ledger Txns) * 100,60,9885,Validated INR ledger transactions,reconciliation_matches,INR
+KPI_REC_08,Reconciliation,Late Settlement Rate (R4),1.62,%,(LATE_SETTLEMENT Count / Validated Ledger Txns) * 100,160,9885,Validated INR ledger transactions,reconciliation_matches,INR
+KPI_REC_09,Reconciliation,Bank Timing Exception Rate (R4),0.61,%,(TIMING_EXCEPTION Count / Validated Ledger Txns) * 100,60,9885,Validated INR ledger transactions,reconciliation_matches,INR
+KPI_REC_10,Reconciliation,Missing Settlement Rate (R7),1.42,%,(MISSING_SETTLEMENT Count / Validated Ledger Txns) * 100,140,9885,Validated INR ledger transactions,reconciliation_matches,INR
+KPI_REC_11,Reconciliation,Missing Ledger Counterpart Rate (R7),0.70,%,(MISSING_LEDGER Count / All Evaluated Cases) * 100,70,10000,"All 10,000 evaluated cases",reconciliation_matches,INR
+KPI_REC_12,Reconciliation,Missing Bank-Entry Rate (R7),0.30,%,(MISSING_BANK_ENTRY Count / Validated Ledger Txns) * 100,30,9885,Validated INR ledger transactions,reconciliation_matches,INR
+KPI_REC_13,Reconciliation,Ambiguous Match Rate (R8),0.35,%,(AMBIGUOUS_MATCH Count / Validated Ledger Txns) * 100,35,9885,Validated INR ledger transactions,reconciliation_matches,INR
+KPI_REC_14,Reconciliation,Confirmed Duplicate Rate (R6),0.99,%,(DUPLICATE_CONFIRMED Count / Validated Settlements) * 100,100,10065,"10,065 validated settlement lines",reconciliation_matches,INR
+KPI_REC_15,Reconciliation,Duplicate Candidate Rate (R6),0.15,%,(DUPLICATE_CANDIDATE Count / Validated Settlements) * 100,15,10065,"10,065 validated settlement lines",reconciliation_matches,INR
+KPI_REC_16,Reconciliation,Refund Exception Rate (R9),28.00,%,(Refund Exceptions / Validated Refunds) * 100,70,250,250 validated refund records,reconciliation_matches,INR
+KPI_REC_17,Reconciliation,Manual Review Rate,0.15,%,(MANUAL_REVIEW Count / Validated Ledger Txns) * 100,15,9885,Validated INR ledger transactions,reconciliation_matches,INR
+KPI_EXC_01,Exception Management,Total Unresolved Exceptions (OPEN + REOPENED),705,Exceptions,"COUNT(*) WHERE resolution_status IN ('OPEN', 'REOPENED')",705,800,800 total detected exceptions,reconciliation.exceptions,INR
+KPI_EXC_02,Exception Management,Total Resolved Exceptions,95,Exceptions,COUNT(*) WHERE resolution_status = 'RESOLVED',95,800,800 total detected exceptions,reconciliation.exceptions,INR
+KPI_EXC_03,Exception Management,Reopened Exception Count,25,Exceptions,COUNT(*) WHERE resolution_status = 'REOPENED',25,800,800 total detected exceptions,reconciliation.exceptions,INR
+KPI_EXC_04,Exception Management,Exception Resolution Rate,11.88,%,(Resolved Exceptions / Total Exceptions) * 100,95,800,800 total detected exceptions,reconciliation.exceptions,INR
+KPI_EXC_05,Exception Management,Average Resolution Time,4.00,Days,AVG(exception_age_days) WHERE resolution_status = 'RESOLVED',380,95,95 resolved exceptions,reconciliation.exceptions,N/A
+KPI_EXC_06,Exception Management,Median Resolution Time,4.00,Days,MEDIAN(exception_age_days) WHERE resolution_status = 'RESOLVED',4.00,1,95 resolved exceptions,reconciliation.exceptions,N/A
+KPI_DQ_01,Data Quality,Data Quality Pass Rate (Transactions),99.30,%,(Validated Txns / Raw Ingested Txns) * 100,9885,9955,"9,955 raw ingested transaction rows",data_quality_before_after,ALL
+KPI_DQ_02,Data Quality,Mandatory-Field Completeness Rate,99.83,%,((Raw Rows - Missing Mandatory/Date Rows) / Raw Rows) * 100,9938,9955,"9,955 raw ingested transaction rows",data_quality_before_after,ALL
+KPI_DQ_03,Data Quality,Quarantine Rate,0.45,%,(Quarantined Rows / Raw Ingested Txns) * 100,45,9955,"9,955 raw ingested transaction rows",quarantine_records,ALL
+KPI_GT_01,Ground Truth QA,Overall Classification Accuracy (10K Cases),100.00,%,"(Correctly Classified Cases / 10,000 Total Cases) * 100",10000,10000,"All 10,000 ground-truth cases",ground_truth_evaluation,N/A
+KPI_GT_02,Ground Truth QA,Planted Exception Recall (Detection Rate),100.00,%,(True Positives / Total Planted Exceptions) * 100,800,800,800 planted exception cases,ground_truth_evaluation,N/A
+KPI_GT_03,Ground Truth QA,Planted Exception Precision,100.00,%,(True Positives / (True Positives + False Positives)) * 100,800,800,All flagged exceptions,ground_truth_evaluation,N/A
+KPI_GT_04,Ground Truth QA,Clean-Record False-Positive Rate,0.00,%,"(Clean Records Flagged as Exception / 9,200 Clean Cases) * 100",0,9200,"9,200 clean match cases",ground_truth_evaluation,N/A

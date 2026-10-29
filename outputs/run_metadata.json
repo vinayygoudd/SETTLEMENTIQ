@@ -1,0 +1,46 @@
+{
+  "run_id": "RUN_20261025_001",
+  "project": "SettlementIQ",
+  "dataset_version": "v1.0.0-SYNTHETIC-10K",
+  "ground_truth_version": "v1.0.0-GT-28SCENARIOS",
+  "rule_version": "RULE_SET_2026_10_v1",
+  "reporting_date": "2026-10-25",
+  "tolerance_inr": "1.00",
+  "sla_business_days": 2,
+  "execution_environment": {
+    "python_executed": true,
+    "sqlite_relational_engine_executed": true,
+    "postgresql_native_daemon_available": false,
+    "libreoffice_calc_recalc_executed": true,
+    "desktop_excel_vba_runtime_available": false,
+    "powerbi_desktop_available": false
+  },
+  "reconciliation_run_summary": {
+    "run_id": "RUN_20261025_001",
+    "total_evaluated_cases": 10000,
+    "eligible_ledger_count": 9885,
+    "matched_count": 9200,
+    "exception_count": 800,
+    "reconciliation_rate_pct": 93.07,
+    "total_expected_inr": "90541356.02",
+    "total_observed_inr": "89806888.30",
+    "net_signed_discrepancy_inr": "-734467.72",
+    "outstanding_exposure_inr": "3752510.63",
+    "confirmed_loss_inr": "126151.24"
+  },
+  "ground_truth_evaluation_summary": {
+    "total_evaluated_cases": 10000,
+    "planted_exception_cases": 800,
+    "clean_baseline_cases": 9200,
+    "correctly_classified_cases": 10000,
+    "incorrectly_classified_cases": 0,
+    "planted_exceptions_detected": 800,
+    "false_positives": 0,
+    "false_negatives": 0,
+    "variance_calculation_errors": 0,
+    "overall_classification_accuracy_pct": 100.0,
+    "planted_exception_recall_pct": 100.0,
+    "planted_exception_precision_pct": 100.0,
+    "clean_record_false_positive_rate_pct": 0.0
+  }
+}

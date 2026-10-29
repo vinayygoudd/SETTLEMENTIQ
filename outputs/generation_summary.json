@@ -1,0 +1,69 @@
+{
+  "project": "SettlementIQ",
+  "dataset_version": "v1.0.0-SYNTHETIC-10K",
+  "ground_truth_version": "v1.0.0-GT-28SCENARIOS",
+  "random_seed": 42,
+  "generation_timestamp": "2026-10-25T20:00:00Z",
+  "reproducibility_status": "DETERMINISTIC_VERIFIED",
+  "row_counts": {
+    "merchants_csv": 25,
+    "transactions_csv": 9955,
+    "settlements_csv": 10090,
+    "bank_entries_csv": 10070,
+    "refunds_csv": 250,
+    "ground_truth_csv": 10000
+  },
+  "distinct_entity_counts": {
+    "distinct_customers": 3200,
+    "distinct_merchants": 25,
+    "distinct_transactions": 9930,
+    "distinct_payment_references": 9920
+  },
+  "source_monetary_totals_by_currency": {
+    "EUR": "56234.36",
+    "INR": "92603168.27",
+    "USD": "56925.52"
+  },
+  "source_system_totals_inr": {
+    "raw_settlements_gross_inr": "92279891.93",
+    "raw_settlements_fee_inr": "2321948.62",
+    "raw_settlements_net_inr": "89957943.34",
+    "raw_bank_credits_inr": "90147315.46",
+    "raw_bank_debits_inr": "0.00",
+    "raw_refunds_requested_inr": "473860.24"
+  },
+  "scenario_counts": {
+    "S01_EXACT_TXN_STL_MATCH": 3987,
+    "S02_EXACT_STL_BANK_MATCH": 3988,
+    "S03_SMALL_VARIANCE_TOLERANCE": 300,
+    "S04_FEE_ADJUSTED_SETTLEMENT": 250,
+    "S05_LATE_SETTLEMENT": 110,
+    "S06_MISSING_SETTLEMENT": 115,
+    "S07_SETTLEMENT_WITHOUT_LEDGER": 50,
+    "S08_BANK_WITHOUT_SETTLEMENT": 20,
+    "S08_MISSING_BANK_COUNTERPART": 30,
+    "S09_DUPLICATE_SETTLEMENT_CONFIRMED": 40,
+    "S10_DUPLICATE_BANK_ENTRY": 30,
+    "S11_LEGITIMATE_REPEATED_IDENTIFIER": 80,
+    "S12_PARTIAL_SETTLEMENT_SHORTFALL": 55,
+    "S13_LEGITIMATE_MULTI_PART_SETTLEMENT": 150,
+    "S14_AMBIGUOUS_CANDIDATE_MATCH": 35,
+    "S15_MISSING_INVALID_TXN_ID": 10,
+    "S16_MISSING_MANDATORY_REFERENCE": 10,
+    "S17_INVALID_MALFORMED_AMOUNT": 10,
+    "S18_MISSING_DATE": 7,
+    "S19_INVALID_CURRENCY": 8,
+    "S20_REPEATED_INGESTION": 25,
+    "S21_REFUND_AMOUNT_MISMATCH": 30,
+    "S22_MISSING_REFUND_EVIDENCE": 15,
+    "S22_UNREVERSED_REFUND": 15,
+    "S23_LATE_ARRIVING_BANK_RECORD": 60,
+    "S24_PREVIOUSLY_RESOLVED_EXCEPTION": 95,
+    "S25_REOPENED_EXCEPTION": 25,
+    "S26_DUPLICATE_CANDIDATE_REVIEW": 15,
+    "S26_MANUAL_REVIEW_VARIANCE": 15,
+    "S27_CLEAN_RECORD_NO_FALSE_POSITIVE": 300,
+    "S28_BOUNDARY_SLA_2BDAYS": 60,
+    "S28_BOUNDARY_TOLERANCE_1INR": 60
+  }
+}
